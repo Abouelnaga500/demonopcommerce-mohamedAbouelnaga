@@ -31,7 +31,7 @@ public class T01_Login {
 
     @Then("I will be able to login successfully")
     public void iWillBeAbleToLoginSuccessfully() {
-        Assert.assertTrue(Hooks.driver.getCurrentUrl().contains("inventory.html"));
+        Assert.assertTrue(login.currentURL().contains("inventory.html"));
     }
 
     @When("Enter inValid username at username Field")
