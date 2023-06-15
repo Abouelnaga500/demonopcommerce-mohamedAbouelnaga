@@ -1,4 +1,4 @@
-package org.example.stepDef;
+package org.example.stepDefs;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -11,15 +11,16 @@ public class Hooks {
     public static WebDriver driver;
 
     @Before
-    public static void setUp (){
+    public static void setUP() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.navigate().to("https://www.saucedemo.com/");
+        driver.manage().timeouts().implicitlyWait((Duration.ofSeconds(10)));
+        driver.navigate().to("https://demo.nopcommerce.com/");
     }
 
+
     @After
-    public static void tearDown (){
+    public void tearDown() {
         driver.quit();
     }
 }
